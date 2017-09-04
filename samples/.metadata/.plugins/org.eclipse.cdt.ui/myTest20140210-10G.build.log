@@ -1,0 +1,5 @@
+16:40:33 **** Incremental Build of configuration gcc-debug for project myTest20140210-10G ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+
+16:40:33 Build Finished (took 66ms)
+

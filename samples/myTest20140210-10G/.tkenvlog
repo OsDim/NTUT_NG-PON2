@@ -1,0 +1,106 @@
+----------------------------------------------------------------------
+
+
+Tcl error: tkenv.cc#966: null or malformed pointer
+    while executing
+"opp_msgarrtimefromnow $msgptr"
+    (procedure "redrawTimeline" line 68)
+    invoked from within
+"redrawTimeline"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: tkenv.cc#966: null or malformed pointer
+    while executing
+"opp_msgarrtimefromnow $msgptr"
+    (procedure "redrawTimeline" line 68)
+    invoked from within
+"redrawTimeline"
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: modinsp.cc#237: syntax error in expression "-": premature end of expression
+    while executing
+"expr [lindex $bb 2]-[lindex $bb 0]"
+    (procedure "graphicalModuleWindow:adjustWindowSizeAndZoom" line 13)
+    invoked from within
+"graphicalModuleWindow:adjustWindowSizeAndZoom $w"
+    (procedure "createGraphicalModWindow" line 104)
+    invoked from within
+"createGraphicalModWindow .ptr0061B068-2 "565x342+175+175:normal""
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: modinsp.cc#237: syntax error in expression "-": premature end of expression
+    while executing
+"expr [lindex $bb 2]-[lindex $bb 0]"
+    (procedure "graphicalModuleWindow:adjustWindowSizeAndZoom" line 13)
+    invoked from within
+"graphicalModuleWindow:adjustWindowSizeAndZoom $w"
+    (procedure "createGraphicalModWindow" line 104)
+    invoked from within
+"createGraphicalModWindow .ptr011CB068-2 "565x342+175+175:normal""
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: modinsp.cc#237: syntax error in expression "-": premature end of expression
+    while executing
+"expr [lindex $bb 2]-[lindex $bb 0]"
+    (procedure "graphicalModuleWindow:adjustWindowSizeAndZoom" line 13)
+    invoked from within
+"graphicalModuleWindow:adjustWindowSizeAndZoom $w"
+    (procedure "createGraphicalModWindow" line 104)
+    invoked from within
+"createGraphicalModWindow .ptr04F03CE0-2 "565x342+175+175:normal""
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: modinsp.cc#237: syntax error in expression "-": premature end of expression
+    while executing
+"expr [lindex $bb 2]-[lindex $bb 0]"
+    (procedure "graphicalModuleWindow:adjustWindowSizeAndZoom" line 13)
+    invoked from within
+"graphicalModuleWindow:adjustWindowSizeAndZoom $w"
+    (procedure "createGraphicalModWindow" line 104)
+    invoked from within
+"createGraphicalModWindow .ptr0123B068-2 "565x342+175+175:normal""
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: modinsp.cc#237: syntax error in expression "-": premature end of expression
+    while executing
+"expr [lindex $bb 2]-[lindex $bb 0]"
+    (procedure "graphicalModuleWindow:adjustWindowSizeAndZoom" line 13)
+    invoked from within
+"graphicalModuleWindow:adjustWindowSizeAndZoom $w"
+    (procedure "createGraphicalModWindow" line 104)
+    invoked from within
+"createGraphicalModWindow .ptr0121B068-2 "565x342+175+175:normal""
+
+
+----------------------------------------------------------------------
+
+
+Tcl error: modinsp.cc#237: syntax error in expression "-": premature end of expression
+    while executing
+"expr [lindex $bb 2]-[lindex $bb 0]"
+    (procedure "graphicalModuleWindow:adjustWindowSizeAndZoom" line 13)
+    invoked from within
+"graphicalModuleWindow:adjustWindowSizeAndZoom $w"
+    (procedure "createGraphicalModWindow" line 104)
+    invoked from within
+"createGraphicalModWindow .ptr011EB068-2 "565x342+175+175:normal""
+
+
