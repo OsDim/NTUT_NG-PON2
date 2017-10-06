@@ -13,7 +13,7 @@
 
 // Maximum transition unit
 //const uint32_t MTU = 78125 * 0.95 = 74218 ;
-const uint32_t MTU = 750000 - 64;
+const uint32_t MTU = 190000 - 64; //byte. MTW here, don't ask why is MTU 32ONU is 750000 , 128ONU is 190000(2ms) 47500(0.5ms)
 const uint32_t MTU_low = 6000-64;
 const uint32_t MTU_high = 80000-64;
 const uint32_t MTU_all = 20000-64 ;

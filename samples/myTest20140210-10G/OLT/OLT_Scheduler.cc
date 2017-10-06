@@ -262,20 +262,20 @@ void OLT_Scheduler::finish()
         simtime_t high_pktDelay, low_pktDelay = -1;
 
         if (packetCount[i][0]==0)
-            low_pktDelay = 0;
-        else
-            low_pktDelay = packetDelay[i][0] / packetCount[i][0];
-        if (packetCount[i][1]==0)
             high_pktDelay = 0;
         else
-            high_pktDelay = packetDelay[i][1] / packetCount[i][1];
+            high_pktDelay = packetDelay[i][0] / packetCount[i][0];// 0 = high 1 = low, actual is high_pktDelay ,
+        if (packetCount[i][1]==0)
+            low_pktDelay = 0;
+        else
+            low_pktDelay = packetDelay[i][1] / packetCount[i][1];
 
 
 //        out << i << " " << (double)downBytes[i][0]*8/1000000 << " " << (double)downBytes[i][1]*8/1000000 << " "
 //            << packetDelay[i][0] / packetCount[i][0] << " " << packetDelay[i][1] / packetCount[i][1] << " " << maxDelay[i][0] << " " << maxDelay[i][1] << "\n";
 
         out << i << " " << (double)downBytes[i][0]*8/1000000 << " " << (double)downBytes[i][1]*8/1000000 << " "
-                    << low_pktDelay << " " << high_pktDelay  << " " << maxDelay[i][0] << " " << maxDelay[i][1] << "\n";
+                    << high_pktDelay << " " << low_pktDelay  << " " << maxDelay[i][0] << " " << maxDelay[i][1] << "\n";
 
 
     }

@@ -234,7 +234,7 @@ void Classifier::recvGateProcess(MPCPGate *gt) {
     bool upQueueLight =  true , downQueueLight = true ;
     if (dynamic_mode) {
             if ( MTW_algo ) {
-                if( upQueueSize>multiMTW*MTU ) {
+                if( upQueueSize>multiMTW*MTU ) {    // 1*MTU??
                     upQueueLight = false;
                 }
 

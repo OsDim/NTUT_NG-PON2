@@ -29,18 +29,18 @@ simple LocalNetwork
         double rate;
         bool trafficPoisson = default(false);
         //volatile double sendInterval @unit(s);
-        
-       //--------------------------------------------------------
+
+        //--------------------------------------------------------
         bool self_similar = default(false);
         bool asymmetric_flow = default(false);
-		double pareto_rate = default(100 * 1000 * 1000);
-		double pareto_alpha_on = default(1.4);
-		double pareto_alpha_off = default(1.2);
-		double pareto_beta_on = default(1);
-		double multiple_of_flow = default(3.3);
+        double pareto_rate = default(100 * 1000 * 1000);
+        double pareto_alpha_on = default(1.4);
+        double pareto_alpha_off = default(1.2);
+        double pareto_beta_on = default(1);
+        double multiple_of_flow = default(3.3);
 
     gates:
         inout ethDown;
         inout ethUp;
-        
+
 }

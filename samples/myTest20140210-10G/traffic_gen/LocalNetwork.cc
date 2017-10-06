@@ -82,16 +82,16 @@ void LocalNetwork::initialize()
 
     scheduleAt(simTime(), nextArrivalEvent);
 
-    offered_load = par("offered_load");
+    offered_load = par("offered_load");// 0.01
     highPriorityRatio = par("high_priority_ratio");
     sizeOfONU = epon->par("sizeOfONU").longValue();
-    send_rate = par("rate");
-    max_rate = 1 / send_rate;
+    send_rate = par("rate");//1e-10? mean 1*10^-10
+    max_rate = 1 / send_rate;// 1/0.0000000001 = 10000000000 = 10Gbit
 
 //    ------------------------poisson------------------------------
     trafficPoisson = par("trafficPoisson");
 
-    local_throughput = offered_load * max_rate;
+    local_throughput = offered_load * max_rate; // 0.01 * 10Gbit = 100Mbit
     interpacket_time = ((((MIN_FRAME_LEN + MAX_FRAME_LEN) / 2) * 8) / local_throughput);
 
 

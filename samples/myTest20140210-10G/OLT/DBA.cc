@@ -83,6 +83,10 @@ void DBA::initialize() {
     srand((unsigned)time(NULL)) ;
 
     // for dynamic
+
+    //GATE_cycle[onuSize];????????
+    //totalQueueSize[onuSize];?????
+
     dyRatio = epon->par("dyRatio").doubleValue();
     downThreshold = epon->par("downThreshold").doubleValue();
     normalizeDown = 10 / (par("down_data_rate").doubleValue());
@@ -868,17 +872,16 @@ void DBA::polling(uint32_t idx) {
 
     //check MTW
     if (asymmetric_flow) {
-        if (idx < 8) {
+        if (idx < 8) {// ?????
             if ((crdReqLen > MTU_high) || (setMTW == 1))
                 crdReqLen = MTU_high;
         } else {
             if ((crdReqLen > MTU_low) || (setMTW == 1))
                 crdReqLen = MTU_low;
         }
-    }
-
-    else if (crdReqLen > MTU)
+    } else if (crdReqLen > MTU) {
         crdReqLen = MTU; //0.2msx100Mbps=2500bytes/MTU
+    }
 
 //    cout << "final giving crdReqLen=" << crdReqLen << endl;
 //    cout << "current predict len = predictFn = avgArvRate[idx] * waitTime = "  << predictFn << endl;
@@ -896,7 +899,7 @@ void DBA::polling(uint32_t idx) {
     uint16_t curMode = onutbl->getEntry(idx)->getState();
 
     downloading(idx); // decide loading whether exceed threshold
-
+    //???
     if (curMode != SLEEP/*onutbl->getEntry(idx)->getState()!=SLEEP*/) { //onutable is active or doze
 //        downloading(idx);
 
@@ -933,21 +936,18 @@ void DBA::polling(uint32_t idx) {
                 grantDownLen[idx] = 0;
             } else {  // upstream not light.
 
-                grantDownLen[idx] = 0;
+                grantDownLen[idx] = 0;//?????????????????
                 /*
                 grantDownLen[idx] = getDownstreamData(idx);
                 cycleAllPacketSize = cycleAllPacketSize + grantDownLen[idx] ;
                 */
             }
-        }
-
-        else {
+        } else {
 
             notSleepOnu ++ ;
             grantDownLen[idx] = getDownstreamData(idx); // getDownstreamData() put traffic to tempVec
             //cout << "idx : " << idx <<" grant : "<< grantDownLen[idx] << endl ;
             cycleAllPacketSize = cycleAllPacketSize + grantDownLen[idx] ;
-
 
         }
 //        if (onutbl->getEntry(idx)->getState()==ACTIVE)
@@ -984,7 +984,7 @@ void DBA::polling(uint32_t idx) {
 
         last_active_ch = active_ch ;
         if( last_active_ch < 1 ) last_active_ch = 1 ;
-        active_ch = ceil( (((double) cycleAllPacketSize) * 8.0)/ 50000000 )  ; // onu * 0.006 cycle time
+        active_ch = ceil( (((double) cycleAllPacketSize) * 8.0)/ 50000000 )  ; // onu * 0.006 cycle time, 128 ONU if cycleTime still 2ms , then every ONU 0.015625ms
         if ( active_ch > 4 ) active_ch = 4 ;
         if ( active_ch < 1 ) active_ch = 1 ;
 
@@ -1466,12 +1466,11 @@ void DBA::downloading(uint16_t idx) {
     else
         downRate[idx] = dyRatio * loading + (1 - dyRatio) * downRate[idx];
 
-
-
     lastGATE[idx] = newGATE[idx];
     newGATE[idx] = simTime();
 
 }
+
 void DBA::activeChannel() {
     if ( active_ch != last_active_ch ) { // record channel time
         if ( simTime() >= 1 ) {
@@ -1598,7 +1597,7 @@ void DBA::hungarian() {
     vector<int> assignment;
 
     double cost;
-    while( channelAssignment.size() < 32 ){
+    while( channelAssignment.size() < onuSize ){
 
         Times++;
         assignment.clear();
@@ -1632,7 +1631,7 @@ void DBA::hungarian() {
     }
 
     /*
-    for(int i = 0; i < 32; i++)
+    for(int i = 0; i < onuSize; i++)
     {
         cout << "ONU:" << chnnelAssignment[i].first << "->Ch:" << chnnelAssignment[i].second << ", ";
     }

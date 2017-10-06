@@ -1,5 +1,39 @@
-16:40:33 **** Incremental Build of configuration gcc-debug for project myTest20140210-10G ****
+13:27:33 **** Incremental Build of configuration gcc-debug for project myTest20140210-10G ****
 make MODE=debug CONFIGNAME=gcc-debug all 
+OLT/DBA.cc
+OLT/DBA.cc: In member function ‘void DBA::hungarian()’:
+OLT/DBA.cc:1614:48: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             for(int i = 0; i < costMatrix.size(); i++)
+                                                ^
+OLT/DBA.cc:1599:12: warning: variable ‘cost’ set but not used [-Wunused-but-set-variable]
+     double cost;
+            ^
+OLT/OLT_Scheduler.cc
+OLT/ONUTableEntry.cc
+OLT/ONUTable.cc
+ONU/PowerControler.cc
+ONU/PowerControler.cc: In member function ‘virtual void PowerControler::finish()’:
+ONU/PowerControler.cc:172:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (getParentModule()->getId() - 1 == onuSize)
+                                           ^
+ONU/Scheduler.cc
+ONU/Classifier.cc
+ONU/Classifier.cc: In member function ‘virtual void Classifier::finish()’:
+ONU/Classifier.cc:176:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (getParentModule()->getId() - 1 == onuSize)
+                                           ^
+ONU/Classifier.cc:195:43: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (getParentModule()->getId() - 1 == onuSize)
+                                           ^
+ONU/Classifier.cc: In member function ‘void Classifier::recvGateProcess(MPCPGate*)’:
+ONU/Classifier.cc:222:14: warning: unused variable ‘downQueueLength’ [-Wunused-variable]
+     uint32_t downQueueLength = gt->getQueueLength(0) + gt->getQueueLength(1);
+              ^
+Splitter/PON_Splitter.cc
+traffic_gen/LocalNetwork.cc
+traffic_gen/CoreNetwork.cc
+traffic_gen/TrafficGen.cc
+Creating executable: out/gcc-debug//myTest20140210-10G
 
-16:40:33 Build Finished (took 66ms)
+13:27:40 Build Finished (took 6s.568ms)
 
